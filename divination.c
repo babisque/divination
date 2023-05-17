@@ -25,7 +25,7 @@ int main()
     int dificulty;
     double points = 1000;
 
-    printf("Select the dificult you want.\n");
+    printf("Select the difficulty level.\n");
     printf("(1) Easy (2) Medium (3) Hard\n");
     printf("Choose: ");
     scanf("%d", &dificulty);
@@ -56,17 +56,17 @@ int main()
         }
 
         if (guess == secretNumber) {
-            printf("Congratulations, you get it!\n");
+            printf("Congratulations, you got it!\n");
             printf("You only needed %d tries.\n", i);
-            printf("And made %.2f points.\n", points);
+            printf("And earned %.2f points.\n", points);
             break;
         } else if (guess > secretNumber) {
-            printf("Your number is bigger than the secret number. Try again.\n");
+            printf("Your number is larger than the secret number. Try again.\n");
         } else {
-            printf("Your number is smallest than the secret number. Try again.\n");
+            printf("Your number is smaller than the secret number. Try again.\n");
         }
 
         double losePoints = abs(guess - secretNumber) / (double)i;
-        points = points - losePoints;
+        points -= losePoints;
     }
 }
